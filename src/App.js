@@ -8,6 +8,7 @@ import Chart from "./components/MainPage/Contents/Charts/Chart";
 import Dashboard from "./components/MainPage/Contents/Dashboard/Dashboard";
 import Setting from "./components/MainPage/Contents/Setting/setting";
 import Table from "./components/MainPage/Contents/Table/Table";
+import AddUser from "./components/MainPage/AddUser/AddUser";
 
 export default function App() {
    return (
@@ -17,11 +18,18 @@ export default function App() {
                <div className="flex flex-col w-full">
                   <Header />
                   <Routes>
-                     <Route path="/" element={<Users />} />
+                     <Route path="/user" element={<Users />} />
+                     <Route path="user/add" element={<AddUser />}>
+                        <Route path=":id" />
+                     </Route>
+                     <Route path="user/edit" element={<AddUser />}>
+                        <Route path=":id" />
+                     </Route>
                      <Route path="/dashboard" element={<Dashboard />} />
                      <Route path="/table" element={<Table />} />
                      <Route path="/chart" element={<Chart />} />
                      <Route path="/setting" element={<Setting />} />
+                     <Route path="*" element={<Users />} />
                   </Routes>
                </div>
                <SideBar />

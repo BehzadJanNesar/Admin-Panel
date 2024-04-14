@@ -9,7 +9,7 @@
    .hide-item {
       @apply opacity-0 invisible hidden;
    }
-   .active-link {
+   .active_link {
       @apply bg-[#2b2e37] border-l-[5px];
    }
 }

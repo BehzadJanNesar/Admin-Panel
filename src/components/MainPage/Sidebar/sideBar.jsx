@@ -23,27 +23,28 @@ export default function SideBar() {
          </div>
          <nav className="h-[89.5%] bg-[#32363f] flex flex-col gap-3 p-5 overflow-hidden">
 
-            <NavLink to={"/"} className={`${({ isActive }) => { return isActive ? "active-link" : "" }} sidebar-item hover:bg-[#2b2e37]`}>
+            <NavLink to={"/"} className={`${({ isActive }) => isActive ? "active_link" : ""} sidebar-item hover:bg-[#2b2e37]`}>
+               {/* <NavLink to={"/"} style={({ isActive }) => { return isActive ? { background: "white", color: "blue" } : "" }}> */}
                <FaUser className='text-xl text-blue-900' />
                <span className={`${!sidebarState.Active ? "hide-item" : ""} transition-all duration-[.4s]`}>Users</span>
             </NavLink>
 
-            <NavLink to={"/Dashboard"} className={`${({ isActive }) => { return isActive ? "active-link" : "" }} sidebar-item hover:bg-[#2b2e37]`}>
+            <NavLink to={"/Dashboard"} className={`${({ isActive }) => { return isActive ? "active_link" : "" }} sidebar-item hover:bg-[#2b2e37]`}>
                <AiFillDashboard className='text-xl text-yellow-500' />
                <span className={`${!sidebarState.Active ? "hide-item" : ""} transition-all duration-[.4s]`}>Dashboard</span>
             </NavLink>
 
-            <NavLink to={"/table"} className={`${({ isActive }) => { return isActive ? "active-link" : "" }} sidebar-item hover:bg-[#2b2e37]`}>
+            <NavLink to={"/table"} className={`${({ isActive }) => { return isActive ? "active_link" : "" }} sidebar-item hover:bg-[#2b2e37]`}>
                <MdTableChart className='text-xl text-purple-600' />
                <span className={`${!sidebarState.Active ? "hide-item" : ""} transition-all duration-[.4s]`}>Table</span>
             </NavLink>
 
-            <NavLink to={"/chart"} className={`${({ isActive }) => { return isActive ? "active-link" : "" }} sidebar-item hover:bg-[#2b2e37]`}>
+            <NavLink to={"/chart"} className={`${({ isActive }) => { return isActive ? "active_link" : "" }} sidebar-item hover:bg-[#2b2e37]`}>
                <FaChartColumn className='text-xl text-teal-500' />
                <span className={`${!sidebarState.Active ? "hide-item" : ""} transition-all duration-[.4s]`}>Charts</span>
             </NavLink>
 
-            <NavLink to={"/setting"} className={`${({ isActive }) => { return isActive ? "active-link" : "" }} sidebar-item hover:bg-[#2b2e37]`}>
+            <NavLink to={"/setting"} className={`${({ isActive }) => { return isActive ? "active_link" : "" }} sidebar-item hover:bg-[#2b2e37]`}>
                <IoIosSettings className='text-xl text-rose-600' />
                <span className={`${!sidebarState.Active ? "hide-item" : ""} transition-all duration-[.4s]`}>Settings</span>
             </NavLink>
