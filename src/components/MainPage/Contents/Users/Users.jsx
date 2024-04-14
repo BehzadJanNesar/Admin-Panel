@@ -1,25 +1,14 @@
-import React, { useEffect, useReducer } from 'react'
+import React, { useContext } from 'react'
 import { FaRegEdit, FaRegTrashAlt } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import './usersStyle.css'
-import AxiosFanc from '../../../../HandelFunctions/axios';
-import { InitialStateSidebar, SidebarReducerFunc } from '../../../../hooks/Reducer/Reducer';
+import { SideBarContext } from '../../../../hooks/Context/context';
 
 export default function Users() {
 
-   const [addUserState, dispatchAddUser] = useReducer(SidebarReducerFunc, InitialStateSidebar)
+   const { DeleteUser, addUserState } = useContext(SideBarContext)
 
-   useEffect(() => {
-      async function LoadUser() {
-         const data = await AxiosFanc()
-         const newState = {
-            type: "addUser",
-            data: data
-         }
-         dispatchAddUser(newState)
-      }
-      LoadUser()
-   }, []);
+
    return (
       <div className="w-full h-full flex items-start justify-center py-[3rem]">
          <table className="table-auto w-[80%] text-white border-separate border-spacing-y-2">
@@ -37,13 +26,13 @@ export default function Users() {
                   addUserState.users.map(user => {
                      const { id, name, username, email } = user
                      return (
-                        <tr className="h-[4rem] bg-[#32363f]">
+                        <tr key={Math.random()} className="h-[4rem] bg-[#32363f]">
                            <td>{id}</td>
                            <td>{name}</td>
                            <td>{username}</td>
                            <td>{email}</td>
                            <td className="[&>*]:inline-block">
-                              <FaRegTrashAlt className="w-[1.4rem] h-[1.4rem] me-[1rem] text-red-700" />
+                              <FaRegTrashAlt onClick={() => DeleteUser(id)} className="w-[1.4rem] h-[1.4rem] me-[1rem] text-red-700" />
                               <Link
                                  className="flex justify-center items-center translate-y-[0.4rem]"
                                  to={"user/edit/2"}

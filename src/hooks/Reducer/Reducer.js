@@ -7,8 +7,9 @@ export function SidebarReducerFunc(state, action) {
       case "Active":
          return { ...state, ...{ Active: action.data } };
       case "addUser":
-         console.log(action.data);
          return { ...state, users: [...action.data] };
+      case "delete":
+         return { ...state, users: [action.data] };
 
       default:
          return;
