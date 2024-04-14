@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+   th,
+   td {
+      @apply p-2;
+   }
+   tr {
+      @apply overflow-hidden;
+   }
+   td {
+      @apply last:rounded-[0_7px_7px_0] first:rounded-[7px_0_0_7px];
+   }
+   th {
+      @apply last:rounded-[0_7px_7px_0] first:rounded-[7px_0_0_7px];
+   }
+}

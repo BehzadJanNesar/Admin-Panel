@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+   .sidebar-item {
+      @apply flex items-center gap-7 leading-6 text-white font-medium text-lg cursor-pointer p-3 rounded duration-200 transition-all ease-in-out;
+   }
+   .hide-item {
+      @apply opacity-0 invisible hidden;
+   }
+   .active-link {
+      @apply bg-[#2b2e37] border-l-[5px];
+   }
+}

@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header/header";
+import SideBar from "./components/MainPage/Sidebar/sideBar";
+import { SideBarProvider } from "./hooks/Context/context";
+import Users from "./components/MainPage/Contents/Users/Users";
+import Chart from "./components/MainPage/Contents/Charts/Chart";
+import Dashboard from "./components/MainPage/Contents/Dashboard/Dashboard";
+import Setting from "./components/MainPage/Contents/Setting/setting";
+import Table from "./components/MainPage/Contents/Table/Table";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+   return (
+      <div className="bg-[#2b2e37] w-full min-h-screen flex flex-row-reverse">
+         <Router>
+            <SideBarProvider>
+               <div className="flex flex-col w-full">
+                  <Header />
+                  <Routes>
+                     <Route path="/" element={<Users />} />
+                     <Route path="/dashboard" element={<Dashboard />} />
+                     <Route path="/table" element={<Table />} />
+                     <Route path="/chart" element={<Chart />} />
+                     <Route path="/setting" element={<Setting />} />
+                  </Routes>
+               </div>
+               <SideBar />
+            </SideBarProvider>
+         </Router>
+      </div>
+   );
 }
-
-export default App;

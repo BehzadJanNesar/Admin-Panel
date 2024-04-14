@@ -1,0 +1,10 @@
+color background : #2b2e37
+color contents : #32363f
+color green : #7bd25f
+color red : #f4575d
+color orange : #f4964e
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
