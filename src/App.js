@@ -15,7 +15,7 @@ export default function App() {
       <div className="bg-[#2b2e37] w-full min-h-screen flex flex-row-reverse">
          <Router>
             <SideBarProvider>
-               <div className="flex flex-col w-full">
+               <div className="flex flex-col w-full h-screen">
                   <Header />
                   <Routes>
                      <Route path="/user" element={<Users />} />

@@ -1,7 +1,11 @@
 import React from 'react'
+import FormHandler from '../../../HandelFunctions/FormHandler'
 
 export default function AddUser() {
+   console.log(FormHandler)
    return (
-      <div className='text-3xl text-white'>AddUser</div>
+      <form>
+         {FormHandler()}
+      </form>
    )
 }
